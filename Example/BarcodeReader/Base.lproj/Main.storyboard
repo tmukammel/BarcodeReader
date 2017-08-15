@@ -1,25 +1,75 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BarcodeReader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXn-Z1-03g" customClass="BarcodeReaderView" customModule="BarcodeReader">
+                                <rect key="frame" x="67" y="113.5" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NXn-Z1-03g" secondAttribute="height" multiplier="1:1" id="eVG-at-omQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBx-47-lYD">
+                                <rect key="frame" x="67" y="374" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NBx-47-lYD" secondAttribute="height" multiplier="120:17" id="nrN-AZ-keC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="svE-OA-4oB">
+                                <rect key="frame" x="67" y="416" width="240" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="svE-OA-4oB" secondAttribute="height" multiplier="48:14" id="tym-yd-XqS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="svE-OA-4oB" firstAttribute="trailing" secondItem="NBx-47-lYD" secondAttribute="trailing" id="0jf-cm-Mes"/>
+                            <constraint firstItem="NXn-Z1-03g" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="240:375" id="BK1-Oy-p3n"/>
+                            <constraint firstItem="NBx-47-lYD" firstAttribute="top" secondItem="NXn-Z1-03g" secondAttribute="bottom" constant="20" id="HNR-z6-KIy"/>
+                            <constraint firstItem="NBx-47-lYD" firstAttribute="leading" secondItem="NXn-Z1-03g" secondAttribute="leading" id="L4V-db-ws7"/>
+                            <constraint firstItem="NXn-Z1-03g" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" multiplier="0.7" id="MPH-ak-d04"/>
+                            <constraint firstItem="svE-OA-4oB" firstAttribute="leading" secondItem="NBx-47-lYD" secondAttribute="leading" id="dz8-e5-A8s"/>
+                            <constraint firstItem="svE-OA-4oB" firstAttribute="top" secondItem="NBx-47-lYD" secondAttribute="bottom" constant="8" id="hwP-h6-WUT"/>
+                            <constraint firstItem="NXn-Z1-03g" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="jDE-i5-nXm"/>
+                            <constraint firstItem="NBx-47-lYD" firstAttribute="trailing" secondItem="NXn-Z1-03g" secondAttribute="trailing" id="yca-sg-i3c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barcodeReader" destination="NXn-Z1-03g" id="DjC-fv-7pL"/>
+                        <outlet property="outputLabel" destination="svE-OA-4oB" id="Rr4-Vo-OJg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,16 @@
+PODS:
+  - BarcodeReader (0.1.0)
+
+DEPENDENCIES:
+  - BarcodeReader (from `../`)
+
+EXTERNAL SOURCES:
+  BarcodeReader:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BarcodeReader: c11dc6be1262cb21174867301c4a414a1474b846
+
+PODFILE CHECKSUM: a93722272ecf2859d7ccd6abd9372e4a53397858
+
+COCOAPODS: 1.3.1

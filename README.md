@@ -9,7 +9,43 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Screenshots
+
+<img src="https://dl.dropboxusercontent.com/s/jgl86lb7l2knk6b/BarcodeReaderScreenShot.PNG?dl=0" />
+
+## Implementation
+
+Simply create a UIView in interface builder and assign custom class BarcodeReaderView.
+
+<img src="https://dl.dropboxusercontent.com/s/qzqp41of8rgjpob/BarcodeReaderViewClass.png?dl=0" />
+
+Then
+
+```swift
+import UIKit
+import BarcodeReader
+
+class ViewController: UIViewController, BarcodeReaderDelegate {
+
+    @IBOutlet weak var barcodeReader: BarcodeReaderView!
+    @IBOutlet weak var outputLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        barcodeReader.delegate = self
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        barcodeReader.startReader()
+    }
+
+    // MARK: - BarcodeReaderDelegate
+    func barcodeOutput(string: String?) {
+        outputLabel.text = string
+    }
+}
+```
 
 ## Installation
 
